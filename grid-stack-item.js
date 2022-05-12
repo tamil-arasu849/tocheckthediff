@@ -27,8 +27,13 @@ export default class GridStackItem extends Component {
     return document.getElementById(this.guid);
   }
 
+  get GRIDSTACKID() {
+    return {...this.args.GRIDSTACKID};
+  }
+
   @action
   setup(elm) {
+    elm.setAttribute('gs-gridstackid', this.GRIDSTACKID.ID);
     this.elm = elm;
     this.gridStackComponent = this.gridStackRegistry.findGridComponent(this.elm);
     this.gridStackComponent?.addWidget(this.elm);

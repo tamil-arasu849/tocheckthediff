@@ -2,7 +2,7 @@
 <div
   id={{this.guid}}
   class="grid-stack"
-  {{did-insert this.setup}}
+  ondragend={{action "dragend"}}
   {{did-update this.update @options}}
   {{will-destroy this.willDestroyNode}}
   ...attributes
